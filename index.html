@@ -195,7 +195,7 @@ body.tech .result-list div{background:rgba(255,255,255,.055)}
 @media(max-width:760px){.score-grid,.easter-grid{grid-template-columns:1fr}.hero{min-height:auto}.italy-hero:before{display:none}.map-node{font-size:.7rem;padding:6px 8px}.map-line{display:none}}
 
 
-/* --- Advanced Italian cultural UX interactions --- */
+
 .nav-links a[href="#research-process"], .nav-links a[href="#contact"]{white-space:nowrap}
 .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start;margin-top:22px}
 .contact-form{display:grid;gap:14px}
@@ -489,6 +489,95 @@ body.tech .pomerium-map-label{background:rgba(17,24,39,.92)!important;border-col
 body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!important;}
 @media(max-width:1000px){.why-rome-grid,.why-rome-interactions,.data-aqueduct-layout{grid-template-columns:1fr;}.spqr-panel{min-height:220px;}.pomerium-map-wrap{min-height:300px;}}
 
+
+/* ========== QUANT EVIDENCE LAB (adapted from uploaded broader quant portfolio) ========== */
+.quant-lab-section{
+  background:linear-gradient(180deg, rgba(23,58,94,.035), transparent 70%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.quant-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;}
+.quant-tab{
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--muted);
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:800;
+  cursor:pointer;
+  transition:180ms ease;
+}
+.quant-tab:hover,.quant-tab:focus-visible{color:var(--ink);border-color:var(--blue);}
+.quant-tab.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+.quant-panels{
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.quant-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);gap:0;}
+.quant-panel[hidden]{display:none!important;}
+.quant-panel-copy{padding:30px;}
+.quant-label{
+  display:inline-block;
+  color:var(--green);
+  font-size:.76rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:900;
+  margin-bottom:12px;
+}
+.quant-panel h3{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,3vw,2.45rem);
+  margin:0 0 12px;
+  line-height:1.02;
+}
+.quant-panel p{color:var(--muted);line-height:1.72;max-width:760px;}
+.quant-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 22px;}
+.quant-kpis div{border:1px solid var(--line);background:rgba(23,58,94,.035);border-radius:10px;padding:14px;}
+.quant-kpis strong{display:block;font-family:var(--serif);font-size:1.75rem;line-height:1;color:var(--blue);}
+.quant-kpis span{display:block;margin-top:5px;font-size:.78rem;color:var(--muted);font-weight:750;}
+.quant-terminal,.quant-matrix,.quant-dashboard{
+  min-height:330px;
+  background:#08121f;
+  color:#dff8ee;
+  padding:24px;
+  border-left:1px solid rgba(255,255,255,.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.quant-terminal-head{
+  display:flex;gap:7px;align-items:center;margin-bottom:18px;color:#9fb3c8;
+  font:700 .74rem ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.quant-terminal-head span{width:10px;height:10px;border-radius:50%;background:#2f6b4f;display:inline-block;}
+.quant-terminal-head span:nth-child(2){background:#b08a3f;}
+.quant-terminal-head span:nth-child(3){background:#8f1d2c;}
+.quant-terminal pre{
+  white-space:pre-wrap;margin:0;
+  font:600 .86rem/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:#bdf7d2;
+}
+.quant-matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-content:center;}
+.quant-matrix div{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:10px;padding:15px;}
+.quant-matrix b{display:block;color:#fff;margin-bottom:6px;}
+.quant-matrix span{color:#adc3d3;font-size:.86rem;}
+.quant-dashboard{gap:0;justify-content:center;}
+.dash-row{display:grid;grid-template-columns:1.3fr .75fr .9fr;gap:10px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.1);font-size:.86rem;}
+.dash-head{background:rgba(255,255,255,.08);color:#fff;text-transform:uppercase;letter-spacing:.07em;font-size:.72rem;font-weight:900;}
+.dash-row strong{color:#fff;}
+.dash-row em{font-style:normal;color:#bdf7d2;}
+.dash-row.alert em{color:#ffd8a8;}
+.dash-foot{padding:13px 14px;color:#9fb3c8;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;}
+@media(max-width:900px){
+  .quant-panel{grid-template-columns:1fr;}
+  .quant-terminal,.quant-matrix,.quant-dashboard{border-left:0;border-top:1px solid rgba(255,255,255,.08);min-height:auto;}
+  .quant-kpis{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -502,7 +591,7 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 </div>
 <div aria-live="polite" class="market-toast" id="marketToast" role="status"></div>
 <a class="skip-link" href="#evidence-library">Skip to evidence</a>
-<nav aria-label="Main navigation" class="nav"><div class="nav-inner"><a class="brand" href="#top"><span class="brand-mark">E</span><span>El Ghali Sany</span></a><div class="nav-links"><a data-en="Finance Fit" data-it="Profil Finance" href="#finance-banking-fit">Finance Fit</a><a data-en="Curriculum Map" data-it="Mappa corsi" href="#curriculum-map">Curriculum Map</a><a data-en="Transcript" data-it="Transcript" href="#academic-record">Transcript</a><a data-en="Proposal" data-it="Proposta" href="#research-proposal">Proposal</a><a data-en="Why Rome" data-it="Perché Roma" href="#why-rome">Why Rome</a><a data-en="Campus" data-it="Campus" href="#tor-vergata-map">Campus</a><a data-en="Languages" data-it="Lingue" href="#language-evidence">Languages</a><a data-en="Projects" data-it="Progetti" href="#transition-projects">Projects</a><a data-en="30 e Lode" data-it="30 e Lode" href="#lode-skills">30 e Lode</a><a data-en="Thesis" data-it="Tesi" href="#thesis-direction">Thesis</a><a data-en="Evidence" data-it="Evidenze" href="#evidence-library">Evidence</a><a data-en="Contact" data-it="Contatto" href="#contact">Contact</a><span aria-label="Language selector without flags" class="lang-switch">
+<nav aria-label="Main navigation" class="nav"><div class="nav-inner"><a class="brand" href="#top"><span class="brand-mark">E</span><span>El Ghali Sany</span></a><div class="nav-links"><a data-en="Finance Fit" data-it="Profil Finance" href="#finance-banking-fit">Finance Fit</a><a data-en="Curriculum Map" data-it="Mappa corsi" href="#curriculum-map">Curriculum Map</a><a data-en="Transcript" data-it="Transcript" href="#academic-record">Transcript</a><a data-en="Proposal" data-it="Proposta" href="#research-proposal">Proposal</a><a data-en="Quant Lab" data-it="Laboratorio Quant" href="#quant-lab">Quant Lab</a><a data-en="Why Rome" data-it="Perché Roma" href="#why-rome">Why Rome</a><a data-en="Campus" data-it="Campus" href="#tor-vergata-map">Campus</a><a data-en="Languages" data-it="Lingue" href="#language-evidence">Languages</a><a data-en="Projects" data-it="Progetti" href="#transition-projects">Projects</a><a data-en="30 e Lode" data-it="30 e Lode" href="#lode-skills">30 e Lode</a><a data-en="Thesis" data-it="Tesi" href="#thesis-direction">Thesis</a><a data-en="Evidence" data-it="Evidenze" href="#evidence-library">Evidence</a><a data-en="Contact" data-it="Contatto" href="#contact">Contact</a><span aria-label="Language selector without flags" class="lang-switch">
 <button aria-pressed="true" class="lang-btn active" data-lang-btn="en" type="button">EN</button>
 <span aria-hidden="true">|</span>
 <button aria-pressed="false" class="lang-btn" data-lang-btn="it" type="button">IT</button>
@@ -532,7 +621,7 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 <div class="eyebrow" data-en="Tor Vergata research environment" data-it="Ambiente di ricerca Tor Vergata">Tor Vergata research environment</div>
 <h2 data-en="A campus built for signal, not noise." data-it="Un campus costruito per il segnale, non per il rumore.">A campus built for signal, not noise.</h2>
 </div>
-<p class="lead" data-en="The interaction is deliberately simple: drag the research avatar away from postcard Rome and toward the environment where modelling, data and supervision make sense." data-it="L'interazione è volutamente semplice: trascina l'avatar di ricerca lontano dalla Roma da cartolina e verso l'ambiente in cui modellizzazione, dati e supervisione hanno senso.">The interaction is deliberately simple: drag the research avatar away from postcard Rome and toward the environment where modelling, data and supervision make sense.</p>
+<p class="lead" data-en="Rome stays beautiful. Tor Vergata is where the model runs." data-it="Roma resta bellissima. Tor Vergata è il luogo in cui il modello lavora.">Rome stays beautiful. Tor Vergata is where the model runs.</p>
 </div>
 <div class="map-shell">
 <div aria-label="Stylised Rome map with Colosseum and Tor Vergata campus zones" class="rome-map" id="romeMap">
@@ -542,9 +631,9 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 <div aria-label="Drag the research avatar" class="research-avatar" id="researchAvatar" role="button" tabindex="0">EGS</div>
 </div>
 <aside class="map-side">
-<article class="map-status" id="campusMapStatus"><b data-en="Drag the avatar." data-it="Trascina l'avatar.">Drag the avatar.</b><p data-en="Choose the environment for financial modelling." data-it="Scegli l'ambiente per la modellizzazione finanziaria.">Choose the environment for financial modelling.</p></article>
-<div class="map-buttons"><button class="btn" data-en="Move to Colosseum" data-it="Sposta al Colosseo" id="sendColosseum" type="button">Move to Colosseum</button><button class="btn primary" data-en="Move to Tor Vergata" data-it="Sposta a Tor Vergata" id="sendCampus" type="button">Move to Tor Vergata</button></div>
-<p class="muted" data-en="This is not a tourist map. It is a signal-to-noise metaphor for choosing the right research setting." data-it="Non è una mappa turistica. È una metafora segnale/rumore per scegliere il giusto ambiente di ricerca.">This is not a tourist map. It is a signal-to-noise metaphor for choosing the right research setting.</p>
+<article class="map-status" id="campusMapStatus"><b data-en="EGS coordinates" data-it="Coordinate EGS">EGS coordinates</b><p data-en="Select the research environment." data-it="Seleziona l’ambiente di ricerca.">Select the research environment.</p></article>
+<div class="map-buttons"><button class="btn" data-en="Colosseum" data-it="Colosseo" id="sendColosseum" type="button">Colosseum</button><button class="btn primary" data-en="Tor Vergata" data-it="Tor Vergata" id="sendCampus" type="button">Tor Vergata</button></div>
+
 </aside>
 </div>
 </section>
@@ -625,7 +714,6 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 </div>
 </section>
 <section class="section" id="research-process"><div class="section-head"><div><div class="eyebrow" data-en="Research process" data-it="Processo di ricerca">Research process</div><h2 data-en="How I turn a difficult question into a model." data-it="Come trasformo una domanda difficile in un modello.">How I turn a difficult question into a model.</h2></div><p class="lead" data-en="I start with a rough structure, then make the assumptions, variables and limits readable." data-it="Parto da una struttura grezza, poi rendo leggibili ipotesi, variabili e limiti.">I start with a rough structure, then make the assumptions, variables and limits readable.</p></div><div class="research-mirror-shell"><article class="panel mirror-card"><div class="mirror-label">Specular draft</div><div class="mirror-text is-mirrored" id="mirrorResearchText">My process starts with a decision that someone actually has to make. Who decides? What can be measured? Which assumptions are fragile? What changes if the scenario moves? Only after that do I turn the work into a clear story.</div><div class="mirror-controls"><button class="btn primary" id="mirrorToggle" type="button">🪞 Reveal readable draft</button><button class="btn" id="mirrorReset" type="button">Return to Da Vinci mode</button></div></article><aside class="panel"><h3 data-en="Method discipline" data-it="Disciplina del metodo">Method discipline</h3><p data-en="Problem first. Method second. Assumptions visible. Limits never hidden." data-it="Prima il problema. Poi il metodo. Ipotesi visibili. Limiti mai nascosti.">Problem first. Method second. Assumptions visible. Limits never hidden.</p><div class="proof-strip"><span class="pill">Problem framing</span><span class="pill">Assumption control</span><span class="pill">Sensitivity logic</span><span class="pill">Evidence narrative</span></div></aside></div><details class="bologna-secret" id="bologna-towers"><summary data-en="Architectural note" data-it="Nota architettonica">Architectural note</summary><div aria-label="Italian tower comparison" class="tower-chart"><div class="tower pisa" tabindex="0"><span class="tower-tip">Magnificent, but too touristic.</span><div class="tower-bar"></div><small>Torre di Pisa</small></div><div class="tower garisenda" tabindex="0"><span class="tower-tip">The true leaning architectural wonder, at the heart of the oldest university in the Western world.</span><div class="tower-bar"></div><small>Torre della Garisenda · Bologna</small></div><div class="tower asinelli" tabindex="0"><span class="tower-tip">Bologna’s vertical signal: less postcard, more academic city-system.</span><div class="tower-bar"></div><small>Torre degli Asinelli · Bologna</small></div></div></details></section>
-
 <section class="section" id="research-proposal">
 <div class="section-head">
 <div>
@@ -664,6 +752,83 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 <div class="evidence-tag-row"><span class="evidence-tag">GIS/SUMO</span><span class="evidence-tag">CAPEX/OPEX</span><span class="evidence-tag">NPV / ROI / IRR</span><span class="evidence-tag">AHP</span><span class="evidence-tag">TOPSIS / COPRAS</span><span class="evidence-tag">Sensitivity analysis</span></div>
 <div class="cta-row"><a class="btn primary" data-en="Download research proposal" data-it="Scarica research proposal" href="Research_Proposal Tor Vergata University of Rome.pdf">Download research proposal</a><a class="btn" data-en="View thesis section" data-it="Vedi sezione tesi" href="#thesis-direction">View thesis section</a></div>
 </section>
+<section class="section quant-lab-section" id="quant-lab">
+<div class="section-head">
+<div>
+<div class="eyebrow" data-en="Quant evidence lab" data-it="Laboratorio di evidenze quantitative">Quant evidence lab</div>
+<h2 data-en="The technical layer behind the application." data-it="Il livello tecnico dietro la candidatura.">The technical layer behind the application.</h2>
+</div>
+<p class="lead" data-en="Traffic simulation. Investment scoring. Reporting automation." data-it="Simulazione del traffico. Scoring d’investimento. Automazione del reporting.">Traffic simulation. Investment scoring. Reporting automation.</p>
+</div>
+<div aria-label="Quant evidence panels" class="quant-tabs" role="tablist">
+<button aria-controls="quant-panel-sumo" aria-selected="true" class="quant-tab active" data-en="SUMO / GIS" data-it="SUMO / GIS" data-quant-tab="sumo" id="quant-tab-sumo" role="tab" type="button">SUMO / GIS</button>
+<button aria-controls="quant-panel-mcdm" aria-selected="false" class="quant-tab" data-en="AI-MCDM" data-it="AI-MCDM" data-quant-tab="mcdm" id="quant-tab-mcdm" role="tab" type="button">AI-MCDM</button>
+<button aria-controls="quant-panel-dashboard" aria-selected="false" class="quant-tab" data-en="Reporting" data-it="Reporting" data-quant-tab="dashboard" id="quant-tab-dashboard" role="tab" type="button">Reporting</button>
+</div>
+<div class="quant-panels">
+<article aria-labelledby="quant-tab-sumo" class="quant-panel active" data-quant-panel="sumo" id="quant-panel-sumo" role="tabpanel">
+<div class="quant-panel-copy">
+<span class="quant-label" data-en="Mobility-to-finance evidence" data-it="Evidenza mobility-to-finance">Mobility-to-finance evidence</span>
+<h3 data-en="Leaflet/SUMO traffic layer converted into an investment argument." data-it="Layer Leaflet/SUMO convertito in argomento d'investimento.">Leaflet/SUMO traffic layer converted into an investment argument.</h3>
+<p data-en="Mobility exposure becomes site attractiveness, revenue assumptions and ROI scenarios." data-it="L’esposizione alla mobilità diventa attrattività del sito, ipotesi di ricavo e scenari ROI.">Mobility exposure becomes site attractiveness, revenue assumptions and ROI scenarios.</p>
+<div class="quant-kpis">
+<div><strong>SUMO</strong><span data-en="traffic simulation" data-it="simulazione traffico">traffic simulation</span></div>
+<div><strong>GIS</strong><span data-en="spatial exposure" data-it="esposizione spaziale">spatial exposure</span></div>
+<div><strong>ROI</strong><span data-en="scenario logic" data-it="logica scenari">scenario logic</span></div>
+</div>
+<a class="btn" data-en="Open simulation case" data-it="Apri il caso simulazione" href="#casablanca-sumo">Open simulation case</a>
+</div>
+<div aria-label="SUMO root data files detected" class="quant-terminal">
+<div class="quant-terminal-head"><span></span><span></span><span></span><b>traffic-layer.log</b></div>
+<pre>LOAD bd_mohammed_v_heatmap.json
+LOAD bd_mohammed_v_simulation_geo.json
+LOAD maarif_heatmap.json
+LOAD maarif_simulation_geo.json
+STATUS mobility exposure layer ready
+OUTPUT investment-readable traffic evidence</pre>
+</div>
+</article>
+<article aria-labelledby="quant-tab-mcdm" class="quant-panel" data-quant-panel="mcdm" hidden="" id="quant-panel-mcdm" role="tabpanel">
+<div class="quant-panel-copy">
+<span class="quant-label" data-en="Decision intelligence" data-it="Intelligenza decisionale">Decision intelligence</span>
+<h3 data-en="AI-MCDM scorecard for investment selection under uncertainty." data-it="Scorecard AI-MCDM per selezionare investimenti sotto incertezza.">AI-MCDM scorecard for investment selection under uncertainty.</h3>
+<p data-en="Forecasting, appraisal and ranking enter the same capital-allocation logic." data-it="Previsione, valutazione e ranking entrano nella stessa logica di allocazione del capitale.">Forecasting, appraisal and ranking enter the same capital-allocation logic.</p>
+<div class="quant-kpis">
+<div><strong>45.8%</strong><span data-en="MAE reduction" data-it="riduzione MAE">MAE reduction</span></div>
+<div><strong>25</strong><span data-en="ranked projects" data-it="progetti classificati">ranked projects</span></div>
+<div><strong>MCDA</strong><span data-en="ranking logic" data-it="logica ranking">ranking logic</span></div>
+</div>
+<a class="btn" data-en="Open AI-MCDM PDF" data-it="Apri il PDF AI-MCDM" href="AI-MCDM Investment Scoring for Smart Cities.pdf" rel="noopener noreferrer" target="_blank">Open AI-MCDM PDF</a>
+</div>
+<div aria-label="AI-MCDM model matrix" class="quant-matrix">
+<div><b>Forecasting</b><span>XGBoost / Ridge</span></div>
+<div><b>Valuation</b><span>DNPV / ROI / Real Options</span></div>
+<div><b>Weighting</b><span>Fuzzy-AHP / MEREC</span></div>
+<div><b>Ranking</b><span>AROMAN / TOPSIS logic</span></div>
+</div>
+</article>
+<article aria-labelledby="quant-tab-dashboard" class="quant-panel" data-quant-panel="dashboard" hidden="" id="quant-panel-dashboard" role="tabpanel">
+<div class="quant-panel-copy">
+<span class="quant-label" data-en="Operational analytics" data-it="Analytics operativa">Operational analytics</span>
+<h3 data-en="Reporting automation translated into finance-ready evidence." data-it="Automazione del reporting tradotta in evidenza finance-ready.">Reporting automation translated into finance-ready evidence.</h3>
+<p data-en="Data cleaning, KPI dashboards, segmentation and reporting cycles." data-it="Pulizia dati, dashboard KPI, segmentazione e cicli di reporting.">Data cleaning, KPI dashboards, segmentation and reporting cycles.</p>
+<div class="quant-kpis">
+<div><strong>40%</strong><span data-en="cycle reduction" data-it="riduzione ciclo">cycle reduction</span></div>
+<div><strong>KPI</strong><span data-en="management view" data-it="vista management">management view</span></div>
+<div><strong>VBA</strong><span data-en="automation layer" data-it="livello automazione">automation layer</span></div>
+</div>
+<a class="btn" data-en="Open analytics case" data-it="Apri il caso analytics" href="#analytics-summary">Open analytics case</a>
+</div>
+<div aria-label="dashboard preview" class="quant-dashboard">
+<div class="dash-row dash-head"><span>Segment</span><span>Risk</span><span>Action</span></div>
+<div class="dash-row"><span>Portfolio A</span><strong>Low</strong><em>Monitor</em></div>
+<div class="dash-row"><span>Portfolio B</span><strong>Medium</strong><em>Review</em></div>
+<div class="dash-row alert"><span>Portfolio C</span><strong>High</strong><em>Prioritise</em></div>
+<div class="dash-foot">management-ready output</div>
+</div>
+</article>
+</div>
+</section>
 <section class="section why-rome-section" id="why-rome">
 <div class="section-head">
 <div class="why-rome-intro">
@@ -695,8 +860,8 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 </div>
 <div class="why-rome-interactions">
 <article class="pomerium-panel" id="modern-pomerium">
-<h3 data-en="The modern Pomerium of concentration" data-it="Il Pomerium moderno della concentrazione">The modern Pomerium of concentration</h3>
-<p class="muted" data-en="Crossing the modern Pomerium means leaving the intensity of the centre and entering the space where financial modelling can be done properly." data-it="Attraversare il Pomerium moderno significa lasciare l’intensità del centro ed entrare nello spazio in cui la modellizzazione finanziaria può essere fatta seriamente.">Crossing the modern Pomerium means leaving the intensity of the centre and entering the space where financial modelling can be done properly.</p>
+<h3 data-en="Modern Pomerium" data-it="Pomerium moderno">Modern Pomerium</h3>
+<p class="muted" data-en="Centro storico → Tor Vergata. Noise down. Model up." data-it="Centro storico → Tor Vergata. Meno rumore. Più modello.">Centro storico → Tor Vergata. Noise down. Model up.</p>
 <div aria-label="Stylised Rome map showing the modern Pomerium line to Tor Vergata" class="pomerium-map-wrap" id="pomeriumMap">
 <svg aria-label="Modern Pomerium map" class="pomerium-svg" role="img" viewbox="0 0 720 360">
 <path class="pomerium-noise" d="M45 75 C90 35,150 55,168 105 C188 160,130 200,72 178 C24 158,12 110,45 75Z"></path>
@@ -712,22 +877,22 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
 <div class="pomerium-map-label label-centre"><span data-en="Centro storico" data-it="Centro storico">Centro storico</span><small data-en="Beauty, density, noise." data-it="Bellezza, densità, rumore.">Beauty, density, noise.</small></div>
 <div class="pomerium-map-label label-campus"><span>Tor Vergata</span><small data-en="Campus, data, focus." data-it="Campus, dati, concentrazione.">Campus, data, focus.</small></div>
 </div>
-<div class="pomerium-status" data-en="Signal waiting. Click the button to cross from urban noise to quantitative focus." data-it="Segnale in attesa. Clicca il pulsante per passare dal rumore urbano alla concentrazione quantitativa." id="pomeriumStatus">Signal waiting. Click the button to cross from urban noise to quantitative focus.</div>
-<div class="pomerium-actions"><button class="btn primary" data-en="Cross the modern Pomerium" data-it="Attraversa il Pomerium moderno" id="pomeriumCrossBtn" type="button">Cross the modern Pomerium</button><button class="btn" data-en="Reset map" data-it="Reimposta mappa" id="pomeriumResetBtn" type="button">Reset map</button></div>
+<div class="pomerium-status" data-en="Coordinates waiting." data-it="Coordinate in attesa." id="pomeriumStatus">Coordinates waiting.</div>
+<div class="pomerium-actions"><button class="btn primary" data-en="Cross boundary" data-it="Attraversa il confine" id="pomeriumCrossBtn" type="button">Cross boundary</button><button class="btn" data-en="Reset map" data-it="Reimposta mappa" id="pomeriumResetBtn" type="button">Reset map</button></div>
 </article>
 <article class="spqr-panel">
 <span aria-label="SPQR becomes Strategic Planning and Quantitative Research" class="spqr-mark" tabindex="0"><span class="spqr-classic">SPQR</span><span class="spqr-modern">Strategic Planning &amp;<br/>Quantitative Research</span></span>
-<p class="spqr-caption" data-en="Rome gave SPQR a political meaning. In this portfolio, it becomes my academic method: strategic planning, quantitative research and disciplined execution." data-it="Roma ha dato a SPQR un significato politico. In questo portfolio diventa il mio metodo accademico: pianificazione strategica, ricerca quantitativa ed esecuzione disciplinata.">Rome gave SPQR a political meaning. In this portfolio, it becomes my academic method: strategic planning, quantitative research and disciplined execution.</p>
+<p class="spqr-caption" data-en="Strategic Planning. Quantitative Research. Disciplined execution." data-it="Pianificazione strategica. Ricerca quantitativa. Esecuzione disciplinata.">Strategic Planning. Quantitative Research. Disciplined execution.</p>
 </article>
 </div>
 <article class="data-aqueduct-panel" id="data-aqueduct">
-<div class="section-head"><div><div class="eyebrow" data-en="Data aqueduct" data-it="Acquedotto dei dati">Data aqueduct</div><h3 data-en="From Roman engineering to financial data streams." data-it="Dall’ingegneria romana ai flussi di dati finanziari.">From Roman engineering to financial data streams.</h3></div><p class="lead" data-en="Rome built aqueducts to move a vital resource with precision. My research follows the same logic in another domain: it moves data into a structured investment model." data-it="Roma costruiva acquedotti per muovere una risorsa vitale con precisione. La mia ricerca segue la stessa logica in un altro dominio: muove dati dentro un modello d’investimento strutturato.">Rome built aqueducts to move a vital resource with precision. My research follows the same logic in another domain: it moves data into a structured investment model.</p></div>
+<div class="section-head"><div><div class="eyebrow" data-en="Data aqueduct" data-it="Acquedotto dei dati">Data aqueduct</div><h3 data-en="From Roman engineering to financial data streams." data-it="Dall’ingegneria romana ai flussi di dati finanziari.">From Roman engineering to financial data streams.</h3></div><p class="lead" data-en="Mobility, cost, risk and data quality enter the same channel." data-it="Mobilità, costi, rischio e qualità dei dati entrano nello stesso canale.">Mobility, cost, risk and data quality enter the same channel.</p></div>
 <div class="data-aqueduct-layout">
 <div class="aqueduct-column"><b data-en="Inputs" data-it="Input">Inputs</b><span class="aqueduct-chip" data-en="Mobility Data" data-it="Dati di mobilità" data-tip="Demand begins with movement." data-tip-en="Demand begins with movement." data-tip-it="La domanda nasce dal movimento." tabindex="0">Mobility Data</span><span class="aqueduct-chip" data-en="CAPEX / OPEX" data-it="CAPEX / OPEX" data-tip="Cost structure defines feasibility." data-tip-en="Cost structure defines feasibility." data-tip-it="La struttura dei costi definisce la fattibilità." tabindex="0">CAPEX / OPEX</span><span class="aqueduct-chip" data-en="Governance Risk" data-it="Rischio di governance" data-tip="Institutions shape investment risk." data-tip-en="Institutions shape investment risk." data-tip-it="Le istituzioni modellano il rischio d’investimento." tabindex="0">Governance Risk</span></div>
 <div aria-hidden="true" class="aqueduct-streams"><span class="aqueduct-arch"></span><span class="aqueduct-arch"></span><span class="aqueduct-arch"></span><span class="aqueduct-arch"></span><span class="aqueduct-flow"></span><span class="aqueduct-flow"></span><span class="aqueduct-flow"></span><span class="aqueduct-flow"></span></div>
 <div class="aqueduct-column"><b data-en="Research output" data-it="Output di ricerca">Research output</b><span class="aqueduct-chip" data-en="NPV / ROI" data-it="NPV / ROI" data-tip="Value must survive discounting." data-tip-en="Value must survive discounting." data-tip-it="Il valore deve resistere all’attualizzazione." tabindex="0">NPV / ROI</span><span class="aqueduct-chip" data-en="Data Quality" data-it="Qualità dei dati" data-tip="Weak data weakens the model." data-tip-en="Weak data weakens the model." data-tip-it="Dati deboli indeboliscono il modello." tabindex="0">Data Quality</span><span class="aqueduct-chip" data-en="Investment Attractiveness Score" data-it="Investment Attractiveness Score" data-tip="Decision output, not decoration." data-tip-en="Decision output, not decoration." data-tip-it="Output decisionale, non decorazione." tabindex="0">Investment Attractiveness Score</span></div>
 </div>
-<p class="why-rome-note" data-en="The aqueduct is the metaphor. The model is the proof." data-it="L’acquedotto è la metafora. Il modello è la prova.">The aqueduct is the metaphor. The model is the proof.</p>
+<p class="why-rome-note" data-en="Inputs become decisions." data-it="Gli input diventano decisioni.">Inputs become decisions.</p>
 </article>
 </section>
 <section class="section" id="language-evidence">
@@ -1557,7 +1722,7 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
     function setMarketMode(on){
       document.body.classList.toggle('market-mode', on);
       try{localStorage.setItem('egs-market-mode', on ? 'on' : 'off');}catch(e){}
-      showToast(on ? text('ROI sequence detected. Market Research Mode activated.', 'Sequenza ROI rilevata. Modalità Market Research attivata.') : text('Academic view restored.', 'Vista accademica ripristinata.'));
+      showToast(on ? text('ROI', 'ROI') : text('Academic view', 'Vista accademica'));
     }
     try{ if(localStorage.getItem('egs-market-mode') === 'on') document.body.classList.add('market-mode'); }catch(e){}
     document.addEventListener('keydown', function(e){
@@ -1583,11 +1748,11 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
       if(state === 'campus'){
         avatar.style.left = '72%'; avatar.style.top = '47%';
         statusBox.classList.add('good');
-        statusBox.innerHTML = '<b>' + text('Connection established.', 'Connessione stabilita.') + '</b><p>' + text('Research environment detected: green campus, data discipline, ESA/CERN scientific horizon. Ready for modelling.', 'Ambiente di ricerca rilevato: campus verde, disciplina dei dati, orizzonte scientifico ESA/CERN. Pronto per la modellizzazione.') + '</p>';
+        statusBox.innerHTML = '<b>' + text('Connection established.', 'Connessione stabilita.') + '</b><p>' + text('Green campus. Data discipline. ESA/CERN horizon. Ready.', 'Campus verde. Disciplina dei dati. Orizzonte ESA/CERN. Pronto.') + '</p>';
       }else if(state === 'colosseum'){
         avatar.style.left = '24%'; avatar.style.top = '59%';
         statusBox.classList.add('bad');
-        statusBox.innerHTML = '<b>' + text('Too noisy for financial modelling.', 'Troppo rumoroso per la modellizzazione finanziaria.') + '</b><p>' + text('Historical beauty detected, but signal-to-noise ratio is poor.', 'Bellezza storica rilevata, ma il rapporto segnale/rumore è insufficiente.') + '</p>';
+        statusBox.innerHTML = '<b>' + text('Too noisy.', 'Troppo rumore.') + '</b><p>' + text('Beauty noted. Signal weak.', 'Bellezza rilevata. Segnale debole.') + '</p>';
       }else{
         statusBox.innerHTML = '<b>' + text('Drag the avatar.', 'Trascina l\'avatar.') + '</b><p>' + text('Choose the environment for financial modelling.', 'Scegli l\'ambiente per la modellizzazione finanziaria.') + '</p>';
       }
@@ -1636,8 +1801,8 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
         : 'Modern Pomerium crossed: noise reduced, research signal amplified. Welcome to the Tor Vergata space for financial modelling.';
     }else{
       status.textContent = lang()==='it'
-        ? 'Segnale in attesa. Clicca il pulsante per passare dal rumore urbano alla concentrazione quantitativa.'
-        : 'Signal waiting. Click the button to cross from urban noise to quantitative focus.';
+        ? 'Coordinate in attesa.'
+        : 'Coordinates waiting.';
     }
   }
   document.addEventListener('DOMContentLoaded', function(){
@@ -1662,6 +1827,30 @@ body.tech .aqueduct-streams{background:#0B1220!important;border-color:#334155!im
   document.addEventListener('DOMContentLoaded', function(){updateWhyRomeTips(document.documentElement.lang === 'it' ? 'it' : 'en');});
   document.addEventListener('egs-language-change', function(e){updateWhyRomeTips(e.detail && e.detail.lang === 'it' ? 'it' : 'en');});
   window.egsUpdateWhyRomeTips = updateWhyRomeTips;
+})();
+</script>
+<script>
+(function(){
+  function initQuantLab(){
+    const tabs = Array.from(document.querySelectorAll('[data-quant-tab]'));
+    const panels = Array.from(document.querySelectorAll('[data-quant-panel]'));
+    if(!tabs.length || !panels.length) return;
+    function activate(key){
+      tabs.forEach(tab => {
+        const active = tab.getAttribute('data-quant-tab') === key;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(panel => {
+        const active = panel.getAttribute('data-quant-panel') === key;
+        panel.classList.toggle('active', active);
+        panel.hidden = !active;
+      });
+    }
+    tabs.forEach(tab => tab.addEventListener('click', function(){activate(this.getAttribute('data-quant-tab'));}));
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initQuantLab);
+  else initQuantLab();
 })();
 </script>
 </body>
